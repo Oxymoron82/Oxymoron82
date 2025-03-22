@@ -1,0 +1,209 @@
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Основной стиль страницы */
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: url(./images/origami.jpg) left top no-repeat,
+    url(./images/code.jpg) right top no-repeat; /* Правое изображение */
+  background-size: 50% 50%, 50% 50%; /* Каждое изображение будет растянуто по высоте и ширине */
+  background-position: left top, right top; /* Размещаем изображения слева и справа */
+  background-attachment: fixed;
+  position: relative;
+  padding: 0;
+  margin: 0; /* Убираем отступы у всей страницы */
+}
+
+/* Рамка для всей страницы (не для body, а для контейнера) */
+.container {
+  width: 100%;
+  height: 100%;
+  border: 15px solid #010101; /* Рамка для всей страницы */
+  position: relative; /* Контейнер для позиционирования */
+  padding-top: 100px; /* Для отступа сверху */
+}
+
+/* Навигация */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20; /* Размещаем поверх фото */
+  background: rgba(185, 171, 171, 0.576); /* Светло-серый полупрозрачный */
+  /* Анимация фона с линейным градиентом */
+  background: linear-gradient(-45deg, #ff9a9e, #3f190f, #482217, #ffdde1);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite; /* анимация фона */
+}
+
+/* Анимация фона */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+header nav ul li {
+  margin: 0 80px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: rgb(25, 2, 2);
+  font-size: 30px;
+  display: inline-block; /* Делает элемент блочным для применения изменений только к тексту */
+  transition: font-size 0.3s ease, color 0.3s ease; /* Плавный переход только для размера шрифта и цвета */
+}
+
+header nav ul li a:hover {
+  font-size: 35px; /* Увеличиваем размер текста при наведении на ссылку */
+  color: #ffffff; /* Изменяем цвет текста при наведении */
+}
+
+header nav ul li a:active {
+  transform: scale(0.95); /* Немного уменьшаем размер текста при клике */
+  color: #ffffff; /* Цвет текста при клике (по желанию) */
+}
+
+/* Основной контейнер */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Высота экрана */
+  padding: 0 5%; /* Отступы по бокам */
+}
+
+/* Текстовые блоки слева и справа */
+.left,
+.right {
+  width: 20%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Опускаем контент вниз */
+  padding-bottom: 10px; /* Отступ от нижнего края */
+}
+
+.left {
+  text-align: left; /* Выравниваем текст слева */
+}
+
+.right {
+  text-align: right; /* Выравниваем текст справа */
+}
+
+.left h2 {
+  font-size: 50px;
+  color: #0f0101;
+  font-style: italic;
+  font-family: fantasy;
+  text-align: left;
+  margin-bottom: 200px; /* Отступ от заголовка до текста */
+}
+
+.right h2 {
+  margin-bottom: 200px; /* Отступ от заголовка до текста */
+  font-size: 50px;
+  color: #e7e2e2;
+  font-style: italic;
+  font-family: fantasy;
+  text-align: right;
+}
+
+.left p {
+  font-size: 20px;
+  color: #1e0202;
+  text-align: left;
+  font-style: italic;
+  font-family: fantasy;
+}
+
+.right p {
+  font-style: italic;
+  font-size: 20px;
+  color: #220303;
+  text-align: right;
+  font-family: fantasy;
+}
+
+.name,
+.contacts {
+  margin: 0; /* Убираем лишние отступы */
+}
+
+/* Стили для фотографии */
+.photo {
+  width: 40%; /* Уменьшаем ширину фото */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0; /* Помещаем фото в верхнюю часть страницы */
+  left: 50%;
+  transform: translateX(-50%); /* Центрируем фото по горизонтали */
+  z-index: 10; /* Делаем фото поверх всех элементов */
+}
+
+.photo img {
+  height: 100vh; /* Растягиваем фото на всю высоту экрана */
+  width: auto; /* Сохраняем исходную ширину */
+  object-fit: cover; /* Обрезка изображения без потери пропорций */
+}
+
+/* Подвал (footer) */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(185, 171, 171, 0.576); /* Светло-серый полупрозрачный */
+  padding: 5px 10px; /* Уменьшаем отступы в футере */
+  z-index: 10; /* Размещаем поверх фото */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Размещаем элементы по краям */
+  align-items: center;
+  width: 100%;
+  max-width: 100%; /* Убираем ограничение по ширине */
+  padding: 0 5px; /* Убираем отступы по бокам */
+}
+
+.name,
+.contacts {
+  margin: 0.5; /* Убираем лишние отступы */
+  color: black;
+}
+
+.name {
+  font-weight: bold;
+  text-align: left;
+}
+
+.contacts {
+  text-align: right;
+  font-weight: bold;
+}

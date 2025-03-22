@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+    <!-- Подключаем reset.css для сброса стилей -->
+    <link rel="stylesheet" href="./reset.css" />
+    <!-- Подключаем собственный стиль -->
+    <link rel="stylesheet" href="./style4.css" />
+  </head>
+  <body>
+    <!-- Верхний список с навигацией -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Main page</a></li>
+          <li><a href="aboutme.html">About me</a></li>
+          <li><a href="myworks.html">My works</a></li>
+          <li><a href="contacts.html">Contacts</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Контактный блок -->
+    <main class="contact-container">
+      <!-- Левая часть - Контакты -->
+      <section class="contact-info">
+        <h2>📩 Contact Me for Your Next Projects</h2>
+        <ul>
+          <li>📧 Email: example@email.com</li>
+          <li>📞 Phone: +123 456 7890</li>
+          <li>📍 Address: Helsinki, Finland</li>
+        </ul>
+      </section>
+
+      <!-- Разделительная линия -->
+      <div class="divider"></div>
+
+      <!-- Правая часть - Форма -->
+      <section class="contact-form">
+        <form action="#" method="POST">
+          <input type="text" name="name" placeholder="Full Name" required />
+          <input
+            type="text"
+            name="contact"
+            placeholder="Email or Phone"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Tell me about your project"
+            required
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <p class="name">© Maria Shatylovich</p>
+        <p class="contacts">
+          📞 +358 45 1209010 <br />
+          ✉ oxumoron82@gmail.com
+        </p>
+      </div>
+    </footer>
+    <script src="particles.js"></script>
+  </body>
+</html>
