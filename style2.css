@@ -214,3 +214,70 @@ footer {
   text-align: right;
   font-weight: bold;
 }
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  header nav ul li {
+    margin: 10px 0;
+  }
+
+  header nav ul li a {
+    font-size: 24px;
+  }
+
+  .education-container {
+    flex-direction: column; /* Контейнеры в колонку */
+    align-items: center;
+    margin: 150px auto 40px auto;
+  }
+
+  .small-container {
+    width: 80%; /* Сделаем их пошире */
+    height: auto;
+    transform: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+
+  .small-container:hover {
+    transform: none;
+    z-index: 1;
+  }
+
+  .small-container:hover h3 {
+    transform: none;
+    bottom: auto;
+  }
+
+  .small-container:hover p {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .small-container p {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  footer {
+    position: relative;
+    padding: 10px 5px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .name,
+  .contacts {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+}

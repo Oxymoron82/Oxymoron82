@@ -11,7 +11,7 @@ body {
   height: 100%;
   font-family: Arial, sans-serif;
   color: white;
-  background: url(./images/origami.jpg) left top no-repeat,
+  background: url(images/origami.jpg) left top no-repeat,
     url(./images/code.jpg) right top no-repeat; /* Правое изображение */
   background-size: 50% 50%, 50% 50%; /* Каждое изображение будет растянуто по высоте и ширине */
   background-position: left top, right top; /* Размещаем изображения слева и справа */
@@ -206,4 +206,78 @@ footer {
 .contacts {
   text-align: right;
   font-weight: bold;
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Контейнеры один под другим */
+    align-items: center;
+    padding: 20px;
+    height: auto; /* Убираем фиксированную высоту */
+  }
+
+  .left,
+  .right {
+    width: 90%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+
+  .left h2,
+  .right h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .left p,
+  .right p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .photo {
+    position: relative;
+    width: 80%;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: 20px;
+  }
+
+  .photo img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  header nav ul li {
+    margin: 10px 0;
+  }
+
+  header nav ul li a {
+    font-size: 24px;
+  }
+
+  footer {
+    position: relative; /* Чтобы не перекрывался */
+    padding: 10px 5px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .name,
+  .contacts {
+    font-size: 14px;
+    margin: 5px 0;
+  }
 }

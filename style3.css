@@ -9,7 +9,6 @@
 html,
 body {
   height: 100%;
-
   background-color: #b33b3b;
 }
 
@@ -20,14 +19,11 @@ header {
   left: 0;
   width: 100%;
   z-index: 20;
-  background: rgba(185, 171, 171, 0.576);
-  /* Анимация фона с линейным градиентом */
   background: linear-gradient(-45deg, #ff9a9e, #3f190f, #482217, #ffdde1);
   background-size: 300% 300%;
-  animation: gradientMove 8s ease infinite; /* анимация фона */
+  animation: gradientMove 8s ease infinite;
 }
 
-/* Анимация фона */
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
@@ -69,114 +65,71 @@ header nav ul li a:active {
   color: #b22222;
 }
 
-/* Контейнер с образованием */
-.education-container {
+/* Секция с работами (Слайдер) */
+.works-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 250px auto 60px auto;
-  max-width: 90%;
+  padding-top: 80px;
+  height: 100vh;
 }
 
-/* Стили для контейнеров */
-.small-container {
-  position: relative; /* Делаем контейнер родителем для абсолютных элементов */
-  width: 220px;
-  height: 330px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.slider-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* Центрируем содержимое */
-  align-items: center; /* Центрируем по горизонтали */
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
   overflow: hidden;
-  background-size: 100% 100%; /* Масштабируем фон равномерно */
+  position: relative;
 }
 
-/* Добавляем затемнение */
-.small-container::before {
-  content: ""; /* Обязательное свойство */
-  position: absolute;
-  top: 0;
-  left: 0;
+.works-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.work-item {
+  min-width: 300px;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.work-item img {
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0); /* Изначально прозрачный */
-  transition: background 0.3s ease; /* Плавное появление затемнения */
+  height: auto;
+  border-radius: 10px;
 }
 
-/* При наведении затемняем */
-.small-container:hover::before {
-  background: rgba(62, 51, 79, 0.457); /* Затемняем фон */
-}
-
-/* Убираем изображение */
-.small-container img {
-  display: none;
-}
-
-/* Делаем заголовок с обводкой */
-.small-container h3 {
-  position: absolute; /* Отключаем влияние скрытого текста */
-  font-family: fantasy;
-  font-size: 25px;
+/* Кнопки слайдера */
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  background-color: #634646;
   color: white;
-  margin-bottom: 5px;
-  text-shadow: -2px -2px 0 rgb(102, 98, 98), 2px -2px 0 rgb(102, 98, 98),
-    -2px 2px 0 rgb(102, 98, 98), 2px 2px 0 black; /* Чёрная обводка */
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  opacity: 0.8;
 }
 
-/* Фоновые изображения для разных контейнеров */
-.small-container:nth-child(1) {
-  background: url("./images/Näyttökuva\ 2025-02-04\ kello\ 12.53.55.jpeg")
-    center/cover no-repeat;
-}
-.small-container:nth-child(2) {
-  background: url("./images/Näyttökuva\ 2025-03-21\ kello\ 16.26.37.png")
-    center/cover no-repeat;
-}
-.small-container:nth-child(3) {
-  background: url("./images/1_14\ 2.jpg") center/cover no-repeat;
-}
-.small-container:nth-child(4) {
-  background: url("./images/code.jpg") center/cover no-repeat;
-}
-.small-container:nth-child(5) {
-  background: url("./images/0xxx.pdf") center/cover no-repeat;
-}
-
-/* Обычный текст внутри контейнера */
-.small-container p {
-  font-size: 10px;
-  color: #ffffff;
-  font-family: fantasy;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(4rem);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-}
-
-/* Эффект увеличения при наведении */
-.small-container:hover {
-  transform: scale(2);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-  z-index: 20;
-}
-
-.small-container:hover h3 {
-  transform: translateY(-13rem);
-  bottom: 60px; /* Поднимаем вверх */
-}
-
-.small-container:hover p {
+.prev-button:hover,
+.next-button:hover {
+  background-color: #ff6347;
   opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+}
+
+.prev-button {
+  left: -40px; /* ближе к левому краю */
+}
+
+.next-button {
+  right: -40px; /* ближе к правому краю */
 }
 
 /* Подвал (footer) */
@@ -212,4 +165,32 @@ footer {
 .contacts {
   text-align: right;
   font-weight: bold;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .works-slider {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-item {
+    min-width: 80%;
+    margin: 10px 0;
+  }
+
+  .prev-button,
+  .next-button {
+    top: auto;
+    bottom: 10px;
+    transform: none;
+  }
+
+  .prev-button {
+    left: 10px;
+  }
+
+  .next-button {
+    right: 10px;
+  }
 }

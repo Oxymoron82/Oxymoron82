@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me</title>
+    <title>My Works</title>
     <!-- Подключаем reset.css для сброса стилей -->
     <link rel="stylesheet" href="./reset.css" />
     <!-- Подключаем собственный стиль -->
@@ -23,10 +23,55 @@
     </header>
 
     <main>
-      <!-- Контейнер для образования -->
-      <div class="education-container">
-        <!-- 5 одинаковых блоков -->
-      </div>
+      <!-- Секция с работами -->
+      <section class="works-container">
+        <div class="slider-container">
+          <button class="prev-button">&#10094;</button>
+
+          <div class="works-slider">
+            <!-- Примеры работ -->
+            <div class="work-item">
+              <img src="./images/myworks2.png" alt="Work 1" />
+              <p>Design 1</p>
+            </div>
+            <div class="work-item">
+              <img src="./images/myworks3.png" alt="Work 2" />
+              <p>Design 2</p>
+            </div>
+            <div class="work-item">
+              <img src="./images/myworks5.png" alt="Work 3" />
+              <p>Design 3</p>
+            </div>
+            <div class="work-item">
+              <img src="./images/myworks4.png" alt="Work 3" />
+              <p>Design 4</p>
+            </div>
+            <div class="work-item">
+              <img src="./images/myworks4.png" alt="Work 3" />
+              <p>Design 5</p>
+            </div>
+            <div class="work-item">
+              <img src="./images/myworks4.png" alt="Work 3" />
+              <p>Design 5</p>
+            </div>
+            <div class="work-item">
+              <img src="./images/myworks4.png" alt="Work 3" />
+              <p>Design 5</p>
+            </div>
+            <div class="work-item">
+              <img src="./images/myworks4.png" alt="Work 3" />
+              <p>Design 5</p>
+            </div>
+            <div class="work-item">
+              <img src="./images/myworks4.png" alt="Work 3" />
+              <p>Design 5</p>
+            </div>
+            <!-- Добавить дополнительные работы -->
+          </div>
+
+          <button class="next-button">&#10095;</button>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -40,5 +85,7 @@
     </footer>
 
     <script src="aboutme.js"></script>
+    <script src="slider.js"></script>
+    <!-- Подключаем JS для слайдера -->
   </body>
 </html>
