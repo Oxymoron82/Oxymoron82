@@ -9,7 +9,7 @@
 html,
 body {
   height: 100%;
-  background-color: #b33b3b;
+  background-color: #5d2f2f;
 }
 
 /* Навигация */
@@ -72,12 +72,13 @@ header nav ul li a:active {
   align-items: center;
   padding-top: 90px;
   height: 100vh;
+  position: relative;
   overflow: hidden;
 }
 
 .slider-container {
   position: relative;
-  width: 920px; /* 900px ширина слайда + 2*10px отступ */
+  width: 920px; /* Ширина слайда */
   overflow: hidden;
 }
 
@@ -87,7 +88,7 @@ header nav ul li a:active {
 }
 
 .work-item {
-  min-width: 900px;
+  min-width: 900px; /* Ширина слайда */
   margin: 0 10px;
   text-align: center;
 }
@@ -122,33 +123,35 @@ header nav ul li a:active {
   opacity: 1;
 }
 
+/* Сдвигаем кнопки на 1 см от левого и правого края */
 .prev-button {
-  left: -60px;
+  left: 1cm; /* отступ в 1 см от левого края */
 }
 
 .next-button {
-  right: -60px;
+  right: 1cm; /* отступ в 1 см от правого края */
 }
 
 /* Адаптация */
 @media (max-width: 768px) {
   .slider-container {
-    width: 90%;
+    width: 90%; /* Подгонка ширины контейнера для мобильных устройств */
   }
 
   .work-item {
-    min-width: 100%;
+    min-width: 100%; /* Каждому слайду даем полную ширину */
     margin: 0;
   }
 
   .prev-button {
-    left: 5px;
+    left: 1cm; /* сохраняем отступы */
   }
 
   .next-button {
-    right: 5px;
+    right: 1cm;
   }
 }
+
 /* Подвал (footer) */
 footer {
   position: absolute;
@@ -182,50 +185,4 @@ footer {
 .contacts {
   text-align: right;
   font-weight: bold;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .works-slider {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .work-item {
-    min-width: 80%;
-    margin: 10px 0;
-  }
-
-  /* Кнопки слайдера */
-  .prev-button,
-  .next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    background-color: #634646;
-    color: white;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-    opacity: 0.8;
-    display: block; /* всегда показываем кнопки */
-  }
-
-  .prev-button:hover,
-  .next-button:hover {
-    background-color: #ff6347;
-    opacity: 1;
-  }
-
-  .prev-button {
-    left: -40px; /* можно немного вынести за пределы контейнера */
-  }
-
-  .next-button {
-    right: -40px;
-  }
 }
