@@ -110,7 +110,7 @@ header nav ul li a:active {
 }
 
 .contact-info li::before {
-  content: "📩";
+  content: "";
   margin-right: 10px;
 }
 
