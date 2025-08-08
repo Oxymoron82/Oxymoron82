@@ -1,0 +1,115 @@
+/* Общие настройки */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Шапка */
+header {
+  background: linear-gradient(90deg, #2b5876, #4e4376);
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffd369;
+}
+
+/* Контент */
+.portfolio-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.portfolio-content h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Карточки секций */
+section article {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+section h2,
+section h3,
+section h4,
+section h5 {
+  color: #4e4376;
+}
+
+/* Ссылки */
+ul li {
+  margin: 0.4rem 0;
+}
+
+ul li a {
+  color: #2b5876;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+ul li a:hover {
+  color: #ff7f50;
+  border-bottom: 1px solid #ff7f50;
+}
+
+/* Футер */
+footer {
+  background: #2b5876;
+  color: white;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-container .name {
+  font-weight: 600;
+}
+
+.footer-container .contacts {
+  text-align: right;
+  font-size: 0.9rem;
+}
